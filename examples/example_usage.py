@@ -19,13 +19,14 @@ def main():
         presence_penalty=0.1
     )
 
+    # Process a query
     conclusion = mas.process_query(
-        search_term="LLM applications in healthcare",
-        expert_type="Healthcare AI Expert",
-        expert_description="You are an expert in AI applications in healthcare.",
-        user_prompt="Provide examples of LLM applications in healthcare with references.",
+        search_term="current trends in stock and share market",
+        expert_type="Financial Market Expert",
+        expert_description="You are an expert in the latest trends and developments in the global stock and share market.",
+        user_prompt="Provide insights into the current trends and developments in the stock and share market. Include reference links.",
         response_format="json",
-        listed_urls=["https://www.nature.com/", "https://www.thelancet.com/"]
+        listed_urls=["https://www.marketwatch.com/", "https://www.bloomberg.com/markets"] #which URLs should be referred
     )
 
     print(json.dumps(conclusion, indent=2))
