@@ -1,0 +1,16 @@
+README.md
+setup.py
+src/agentmatrix/MultiAgentSystem.py
+src/agentmatrix/__init__.py
+src/agentmatrix.egg-info/PKG-INFO
+src/agentmatrix.egg-info/SOURCES.txt
+src/agentmatrix.egg-info/dependency_links.txt
+src/agentmatrix.egg-info/requires.txt
+src/agentmatrix.egg-info/top_level.txt
+src/agentmatrix/agents/__init__.py
+src/agentmatrix/agents/base_agent.py
+src/agentmatrix/agents/duckduckgo_agent.py
+src/agentmatrix/agents/llm_agent.py
+src/agentmatrix/utils/__init__.py
+src/agentmatrix/utils/helpers.py
+tests/test_multi_agent_system.py
