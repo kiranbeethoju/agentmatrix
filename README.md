@@ -23,25 +23,27 @@ pip install agentmatrix
 Here's a simple example of how to use AgentMatrix:
 
 ```python
-from agentmatrix import DuckDuckGoAgent, LLMAgent
+from agentmatrix import MultiAgentSystem
 
-# Initialize agents
-ddg_agent = DuckDuckGoAgent()
-llm_agent = LLMAgent(api_key="your-openai-api-key", model="gpt-3.5-turbo")
+# Initialize the system
+mas = MultiAgentSystem()
 
-# Use DuckDuckGo agent
-search_results = ddg_agent.process("Python programming")
+# Add agents
+mas.add_duckduckgo_agent()
+mas.add_llm_agent(api_key="sk-uAbo-mUMIA", model="gpt-4")
 
-# Use LLM agent
-llm_response = llm_agent.process(
-    expert_type="Python Expert",
-    expert_description="An expert in Python programming",
-    user_prompt="Explain list comprehensions",
-    response_format="JSON",
-    duckduckgo_results=search_results
+# Process a query
+conclusion = mas.process_query(
+    search_term="current trends in stock and share market",
+    expert_type="Financial Market Expert",
+    expert_description="You are an expert in the latest trends and developments in the global stock and share market.",
+    user_prompt="Provide insights into the current trends and developments in the stock and share market. Include reference links.",
+    response_format="json",
+    listed_urls=["https://www.marketwatch.com/", "https://www.bloomberg.com/markets"] #which URLs should be referred
 )
 
-print(llm_response)
+
+print(conclusion)
 ```
 
 ## Documentation
